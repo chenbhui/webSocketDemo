@@ -39,7 +39,7 @@ export default class MyWebSocket extends WebSocket {
 
     messageHandler(e) {
         const data = this.getMsg(e);
-        console.log("收到消息", data);
+        console.log("收到消息", e);
         switch (data.ModeCode) {
             case ModeCode.MSG: //普通消息
                 console.log("收到消息" + data.msg);
