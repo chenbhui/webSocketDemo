@@ -44,7 +44,9 @@ websocket.onerror = function (event) {
 // 发送心跳消息
 function sendHeartbeat() {
     if (websocket.readyState == websocket.OPEN) {
-        websocket.send('ping');
+        websocket.send(JSON.stringify({
+            type: 'heartbeat'
+        }))
     }
 }
 
